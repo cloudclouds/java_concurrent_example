@@ -1,4 +1,4 @@
-package com.test3;
+package com.four;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -11,8 +11,10 @@ public class ConnectionDriver {
    {
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+		System.out.println("hello");
 		if(method.getName().equals("commit"))
 		{
+			System.out.println("commit方法，进行休息100ms");
 			TimeUnit.MILLISECONDS.sleep(100);
 		}
 		return null;
